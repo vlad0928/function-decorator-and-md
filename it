@@ -1,0 +1,571 @@
+#def factorial(n):
+    #if n == 0 or 1:
+        #return 1
+    #else:
+        #return n * factorial(n - 1)
+#result = factorial(5)
+#print(result)
+
+
+
+
+#def average(numbers):
+   # if not numbers:
+       # return 0 
+    #return sum(numbers) / len(numbers)
+#numbers = [1, 2, 3, 4, 5]
+#result = average(numbers)
+#print(result)
+
+
+
+
+#def is_palindrome(word):
+    #cleaned_word = ''.join(char.lower()for char in word if char.isalnum())
+    #return cleaned_word == cleaned_word[::-1]
+#word_to_check = "ротор"
+#result = is_palindrome(word_to_check)
+#print(f"{word_to_check} є паліндромом: {result}")
+
+
+
+
+
+#import cmath
+
+#def soolve_quadratic_equation(a, b, c):
+
+    #discriminant = cmath.sqrt(b**2 - 4*a*c)
+
+    #root1 = (-b + discriminant) / (2*a)
+    #root2 = (-b - discriminant) / (2*a)
+
+    #return root1, root2
+
+#a = 1
+#b = -3
+#c = 2
+
+#roots = soolve_quadratic_equation(a, b, c)
+#print(f"Корені рівняння {a}x*2 + {b}x + {c} = 0: {roots}")
+
+
+
+
+
+#def celsius_to_fahrenheit(celsius):
+   #fahrenheit = (celsius * 9/5) + 32
+   #return fahrenheit
+
+
+
+
+
+
+#def multiplication_table():
+    #for i in range(1, 11):
+        #for j in range(1, 11):
+            #product = i * j 
+            #print(f'{i} * {j} = {product}')
+        #print()
+
+#multiplication_table()
+
+
+
+
+
+
+#def is_prime(num):
+    #if num < 2:
+        #return False
+   #for i in range(2, int(num**0.5) + 1):
+        #if num % i == 0:
+           # return False
+       # return True 
+
+#def print_primes_up_to(limit):
+    #for number in range(2, limit + 1):
+       #if is_prime(number):
+           # primt(number)
+
+#upper_limit = int(input("Введіть верхню межу:"))
+#print_primes_up_to(upper_limit)
+
+
+
+
+
+
+#def fibonacci_sequence(n):
+    #sequence = [0, 1]
+
+    #while len(sequence) < n:
+        #next_number = sequence[-1] + sequence[-2]
+        #sequence.append(next_number)
+
+    #return sequence
+
+#n = int(input("Введіть кількість чисел у Фібоначчіевій послідовності:"))
+
+
+#result = fibonacci_sequence(n)
+#print(result)
+
+
+
+
+
+#numbers = []
+
+#while True:
+    #number = int(input("Введіть число (введення 0 завершить програму):"))
+
+    #if number == 0:
+        #break
+    #numbers.append(number)
+
+#print("Введені числа:", numbers)
+
+
+
+
+
+#def print_every_second_element(input_list):
+    #for i in range(1, len(input_list), 2):
+        #print(input_list[1])
+
+#my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+#print_every_second_element(my_list)
+
+
+
+
+
+
+#import time 
+
+#def timing_decorator(func):
+    #def wrapper(*args, **kwargs):
+        #start_time = time.time()
+        #result = func(*args, **kwargs)
+        #end_time = time.time()
+        #print(f"Час виконання{func._ _name_ _}: {end_time - start_time} секунд")
+         #return result
+    #return wrapper
+
+#@timing_decorator
+#def example_function():
+        
+    #time.sleep(2)
+    #print("Функція виконана")
+
+#example_function
+
+
+
+
+
+
+#def positive_arguments_decorator(func):
+    #def wrapper(*args, **kwargs):
+        #if all(isinstance(arg, (int, float))and arg > 0 for arg in args):
+            #return func(*args, **kwargs)
+        #else:
+            #raise ValueError("Всі фргументи повинні бути позитивними числами.")
+        #return wrapper
+
+
+#def example_function(a, b, c):
+
+    #print(f"Сума аргументів:{a + b + c}")
+
+#example_function(2, 3, 4)
+
+
+
+
+
+#def cache_decorator(func):
+    #cache = {}
+
+    #def wrapper(*args, **kwargs):
+        #key = (args, frozenset(kwargs.items()))
+        #if key not in cache:
+            #cache[key] = func(*args, **kwargs)
+            #return cache[key]
+        
+    #return wrapper
+
+#def example_function(x, y):
+
+    #print("Виклик функції")
+    #return x + y
+
+#result1 = example_function(3, 4)
+#result2 = example_function(3, 4)
+
+#print(f"Результат 1: {result1}")
+#print(f"Результат 2: {result2}")
+
+
+
+
+
+
+
+#def limit_calls_decorator(max_calls):
+    #def decorator(func):
+        #calls = 0
+
+        #def wrapper(*args, **kwargs):
+            #nonlocal calls
+            #if calls < max_calls:
+                #calls += 1
+                #return func(*args, **kwargs)
+            #else:
+                #print(f"Функцію {func._ _name_ _} обмежено до {max_calls} викликів.")
+        #return wrapper
+    #return decorator
+
+#def example_function():
+
+    #print("Виклик функції")
+
+#example_function()
+#example_function()
+#example_function()
+#example_function()
+
+
+
+
+
+
+
+
+#from functools import wraps
+
+#def check_types(func):
+
+    #def wrapper(*args, **kwargs):
+
+        #expected_types = func. _ _annotations_ _.values()
+
+        #for arg, expected_type in zip(args, expected_types):
+            #if not isinstance(arg, expected_type):
+                #raise TypeError(f"Expected {expected_type} for {arg}, but got {type(arg)}")
+            
+        #return func(*args, **kwargs)
+    
+    #return wrapper
+
+
+
+#def example_function(a: int, b: str):
+    #print(f"a: {a}, b: {b}")
+
+
+#example_function(1, 'hello')
+
+
+
+
+
+
+
+
+
+
+#def find_gcd(a, b):
+    #while b:
+        #a, b = b, a % b
+        #return a
+    
+
+#num1 = 36
+#num2 = 48
+#result = find_gcd(num1, num2)
+#print(f"Найбільший спільний дільник чисел {num1} i {num2} - {result}")
+
+
+
+
+
+
+
+#def recursive_sum(lst):
+    #if not lst:
+        #return 0
+    #else:
+        #return lst[0] + recursive_sum(lst[1:])
+    
+
+#numbers = [1, 2, 3, 4, 5]
+#result = recursive_sum(numbers)
+#print(f"Сума чисел у списку: {result}")
+
+
+
+
+
+
+
+
+
+#from itertools import product
+
+#def combinations_generator(list1, list2, list3)
+    #return list(product(list1, list2, list3))
+
+#list1 = [1, 2]
+#list2 = ['a', 'b']
+#list3 = ['x', 'y']
+
+#result = combinations_generator(list1, list2, list3)
+#print(result)
+
+
+
+
+
+
+#from itertools import permutations
+
+#def generate_permutations(input_str):
+    #return[''.join(p) for p in permutations(input_str)]
+
+
+#input_string = 'abc'
+
+#result = generate_permutations(input_string)
+#print(result)
+
+
+
+
+
+
+
+#def decimal_to_binary(number):
+    #binary_represantation = bin(number)[2:]
+    #return binary_represantation
+
+
+#decimal_number = 10
+#binary_result = decimal_to_binary(decimal_number)
+#print(binary binary_result)
+
+
+
+
+
+
+
+#def sum_of_odd_numbers_decorator(func):
+    #def wrapper(numbers):
+        #odd_numbers = [num for num in numbers if num % 2 != 0]
+        #result = func(odd_numbers)
+        #return result
+    #return wrapper
+
+
+#def calculate_sum(numbers):
+    #return sum(numbers)
+
+
+#my_numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+#result = calculate_sum(my_numbers)
+#print(result)
+
+
+
+
+
+
+
+#def type_check_decorator(func):
+    #def wrapper(self, element):
+        #if isinstance(element, int):
+            #return func(self, element)
+        #else:
+            #print("Помилка: Дозволено додавати тільки цілі числа.")
+            #return wrapper
+#class MyListManager:
+            #def _ _init_ _(self):
+            #self.my_list = []
+
+
+            #def add_element(self, element):
+                #self.my_list.append(element)
+                #print(f"Елемент {element} додано до списку."):
+
+
+#my_manager = MyListManager()
+
+#my_manager.add_element(42)
+#my_manager.add_element("не ціле число")
+
+
+
+
+
+
+
+
+#for number in range(1, 101):
+    #if number % 7 == 0:
+        #print(number)
+
+
+
+
+
+
+
+
+
+
+#def підрахунок_літер(рядок):
+    #голосні = "aeiouAEIOU"
+    #кількість_голосних = 0
+    #кількість_приголосних = 0
+
+    #for літера in рядок:
+        #if літера.isalpha():
+           # if літера in голосні:
+                #кількість_голосних += 1
+           # else:
+                #кількість_приголосних += 1
+
+
+    #return кількість_голосних, кількість_приголосних
+
+
+#рядок = "Крістіано Роналду"
+#результат = підрахунок_літер(рядок)
+#print(f"Голосні: {результат[0]}, Приголосні: {результат[1]}")
+
+
+
+
+
+
+
+
+
+
+
+#def сума_списку(список):
+    #if not список:
+        #return 0
+    #else:
+        #return список[0] + сума_списку(список[1:])
+    
+
+#мій_список = [1, 2, 3, 4, 5]
+#результат = сума_списку(мій_список)
+#print(f"Сума елементів у списку: {результат}")
+
+
+
+
+
+
+
+
+
+#def absolute_value_decorator(func):
+    #def wrapper(*args, **kwargs):
+        #result = func(*args, **kwargs)
+        #return abs(result)
+    #return wrapper
+
+
+
+
+#def example_function(number):
+    #return number - 5
+
+
+
+#result = example_function(8)
+#print(result)
+
+
+
+
+
+
+
+
+#def fibonacci(n):
+    #if n <= 0:
+        #return "Номер повинен бути додатнім цілим числом"
+    #elif n == 1:
+        #return 0
+    #elif n == 2:
+        #return 1
+   # else:
+       # a, b = 0, 1
+        #for _ in range(2, n):
+            #a, b = b, a + b
+            #return b
+        
+
+#result = fibonacci(8)
+#print(result)
+
+
+
+
+
+
+
+
+
+#def count_unique_words(sentence):
+    #words = sentence.split()
+    #unique_words = set(words)
+    #return len(unique_words)
+
+
+
+
+#input_sentence = "Це речення містить кілька унікальних слів і декілька слів повторюються"
+#result = count_unique_words(input_sentence)
+#print(result)
+
+
+
+
+
+
+
+#def print_star_pyramid(n):
+    #for i in range(1, n + 1):
+       #spaces = "" * (n - i)
+       # stars = "*" * (2 * i - 1)
+       # print(spaces + stars)
+
+#print_star_pyramid(5)
+
+
+
+
+
+
+
+#def log_function_call(func):
+    #def wrapper(*args, **kwargs):
+        #print(f"Виклик функції {func. _ _name_ _} з аргументами: {args}, {kwargs}")
+        #result = func(*args, **kwargs)
+        #return result
+    #return wrapper
+
+
+
+#def example_function(x, y):
+    #return x + y
+
+#result = example_function(3, 5)
